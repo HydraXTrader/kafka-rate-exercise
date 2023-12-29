@@ -26,7 +26,7 @@ public class KafkaProducerController {
     @PostMapping("/produce")
     public String produceMessage(@RequestBody String message) {
 
-        System.out.println(new Date()+" - Start producing 1000 message: "+message);
+        System.out.println(new Date()+" - Start producing "+NUM_MESSAGE+" message: "+message);
         for (int i = 0; i < NUM_MESSAGE; i++) {
             MessageDto msg = MessageFactory.createMessage(message, i);
             ObjectMapper mapper = new ObjectMapper();
